@@ -44,3 +44,17 @@ and add to public section in settings.js
       ]
     }
 ```
+
+
+## Common errors
+If you got this error
+```
+While removing plugins
+...
+...
+TypeError: Cannot read property 'buffer' of undefined at walk_obj
+```
+Remove the codova-build folder
+```
+ rm -rf .meteor/local/cordova-build
+```
