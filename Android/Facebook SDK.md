@@ -11,7 +11,7 @@ Go to your [Facebook Developer settings](https://developers.facebook.com/setting
 keytool -exportcert -alias <RELEASE_KEY_ALIAS> -keystore <RELEASE_KEY_PATH> | openssl sha1 -binary | openssl base64
 ```
 
-Add the cordova plugin
+The cordova plugin
 ```
 meteor add cordova:cordova-plugin-facebook4@1.7.1
 ```
@@ -25,7 +25,22 @@ App.configurePlugin('cordova-plugin-facebook4', {
 ```
 Ensure do you have in the android sdk manager the `Android Support Library` and `Google Reposository`.
 
-Use the package 
+Use the package
 ```
-meteor add jsep:facebook-native-login
+meteor add btafel:accounts-facebook-cordova
+```
+and add to public section in settings.js
+```
+"facebook": {
+      "permissions": [
+        "email", 
+        "public_profile", 
+        "user_friends"
+      ],
+      "profileFields": [
+        "name",
+        "gender",
+        "location",
+      ]
+    }
 ```
